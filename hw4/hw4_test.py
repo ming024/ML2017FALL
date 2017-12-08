@@ -54,7 +54,7 @@ x_test = pad_sequences(tokenizer.texts_to_sequences(test), maxlen=l)
 for i in range(0, len(test)):
 	iterator = 0
 	while(iterator < len(test[i]) - 3):
-		if text[i][iterator] == test[i][iterator + 1] and test[i][iterator + 1] == test[i][iterator + 2] and test[i][iterator + 2] == test[i][iterator + 3]:
+		if test[i][iterator] == test[i][iterator + 1] and test[i][iterator + 1] == test[i][iterator + 2] and test[i][iterator + 2] == test[i][iterator + 3]:
 			test[i] = test[i][:iterator] + test[i][iterator + 1:]
 			iterator -= 1
 		#elif iterator < len(text[i]) - 2 and text[i][iterator] == 'l' and text[i][iterator + 1] == 'y' and text[i][iterator + 2] == ' ':
@@ -98,7 +98,7 @@ dictfile = open('dict.csv', 'r')
 dict_list = [line.strip('\n').split(',') for line in dictfile]
 dictionary = dict((row[0], row[1]) for row in dict_list)
 dictfile.close()
-vecfile = open('vec.csv?dl=1', 'r')
+vecfile = open('vec?dl=1.csv', 'r')
 word_vector = [line.strip('\n').split(',') for line in vecfile]
 vecfile.close()
 
