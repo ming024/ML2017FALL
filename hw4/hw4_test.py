@@ -98,8 +98,7 @@ dictfile = open('dict.csv', 'r')
 dict_list = [line.strip('\n').split(',') for line in dictfile]
 dictionary = dict((row[0], row[1]) for row in dict_list)
 dictfile.close()
-
-vecfile = open('vec.csv', 'r')
+vecfile = open('vec.csv?dl=1', 'r')
 word_vector = [line.strip('\n').split(',') for line in vecfile]
 vecfile.close()
 
