@@ -53,9 +53,9 @@ x_test = pad_sequences(tokenizer.texts_to_sequences(test), maxlen=l)
 
 for i in range(0, len(test)):
 	iterator = 0
-	while(iterator < len(text[i]) - 3):
-		if text[i][iterator] == text[i][iterator + 1] and text[i][iterator + 1] == text[i][iterator + 2] and text[i][iterator + 2] == text[i][iterator + 3]:
-			text[i] = text[i][:iterator] + text[i][iterator + 1:]
+	while(iterator < len(test[i]) - 3):
+		if text[i][iterator] == test[i][iterator + 1] and test[i][iterator + 1] == test[i][iterator + 2] and test[i][iterator + 2] == test[i][iterator + 3]:
+			test[i] = test[i][:iterator] + test[i][iterator + 1:]
 			iterator -= 1
 		#elif iterator < len(text[i]) - 2 and text[i][iterator] == 'l' and text[i][iterator + 1] == 'y' and text[i][iterator + 2] == ' ':
 		#	text[i] = text[i][:iterator] + text[i][iterator + 2:]
@@ -69,8 +69,8 @@ for i in range(0, len(test)):
 		#elif iterator < len(text[i]) - 1 and text[i][iterator] == 's' and text[i][iterator + 1] == ' ':
 		#	text[i] = text[i][:iterator] + text[i][iterator + 1:]
 		#	iterator -= 1
-		elif iterator < len(text[i]) - 2 and text[i][iterator] == '\'' and text[i][iterator - 1] == ' ' and text[i][iterator + 1] == ' ':
-			text[i] = text[i][:iterator - 1] + text[i][iterator + 2:]
+		elif iterator < len(test[i]) - 2 and test[i][iterator] == '\'' and test[i][iterator - 1] == ' ' and test[i][iterator + 1] == ' ':
+			test[i] = test[i][:iterator - 1] + test[i][iterator + 2:]
 			iterator -= 2
 		iterator += 1
 	#print('\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bline ' + str(i), end = '', flush = True)
