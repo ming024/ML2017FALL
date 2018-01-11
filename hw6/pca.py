@@ -47,13 +47,5 @@ recon = np.dot(weights, eigenfaces[:4])
 recon = recon + ave
 recon -= np.min(recon)
 recon /= np.max(recon)
-recon = (recon * 255).reshape(600, 600, 3).astype(np.uint8)
+recon = np.round((recon * 255)).reshape(600, 600, 3).astype(np.uint8)
 imsave('reconstruction.jpg', recon)
-
-weights = np.dot(test, U[:, :])
-recon = np.dot(weights, eigenfaces[:])
-recon = recon + ave
-recon -= np.min(recon)
-recon /= np.max(recon)
-recon = (recon * 255).reshape(600, 600, 3).astype(np.uint8)
-imsave('FULL_reconstruction.jpg', recon)
